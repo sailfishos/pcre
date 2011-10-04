@@ -1,0 +1,13 @@
+* Tue May 24 2011 Anas Nashif <anas.nashif@intel.com> - 8.11
+- Repackage documentaion/translations
+
+* Wed Feb 16 2011 Rob Bradford <rob@linux.intel.com> - 8.11
+- Update to latest version for glib 2.28
+
+* Mon Aug  9 2010 Yan Li <yan.i.li@intel.com> - 8.10
+- Update to latest upstream release
+- Patch pcre-7.3-multilib.patch replaced with pcre-8.10-multilib.patch
+  from Fedora
+
+* Thu Dec 18 2008 Anas Nashif <anas.nashif@intel.com> - 7.8
+- Update to 7.8
