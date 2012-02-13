@@ -1,3 +1,10 @@
+* Mon Feb 13 2012 Marko Saukko <marko.saukko@gmail.com> - 8.30
+- Update to version 8.30
+- Dropped merged patch: pcre-8.10-multilib.patch
+- Added .yaml for spectacle
+- Added compat package for the old libpcre.so.0 to maintain 
+  compatibility for now.
+
 * Tue May 24 2011 Anas Nashif <anas.nashif@intel.com> - 8.11
 - Repackage documentaion/translations
 
