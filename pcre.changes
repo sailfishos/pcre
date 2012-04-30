@@ -1,3 +1,7 @@
+* Mon Apr 30 2012 Marko Saukko <sage@merproject.org> - 8.30
+- Removed the compatibility hack that was used to get everything recompiled
+- Install libs to %{_libdir} instead of %{_lib} (Part of MER#174)
+
 * Mon Feb 13 2012 Marko Saukko <marko.saukko@gmail.com> - 8.30
 - Update to version 8.30
 - Dropped merged patch: pcre-8.10-multilib.patch

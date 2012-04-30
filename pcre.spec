@@ -75,15 +75,6 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
-mkdir -p $RPM_BUILD_ROOT/%{_lib}
-mv $RPM_BUILD_ROOT%{_libdir}/libpcre.so.* $RPM_BUILD_ROOT/%{_lib}/
-pushd $RPM_BUILD_ROOT%{_libdir}
-ln -fs ../../%{_lib}/libpcre.so.1 libpcre.so
-popd
-
-# HACK: SONAME change, here because of compatibility reasons.
-cp -p /%{_lib}/libpcre.so.0.0.1 $RPM_BUILD_ROOT/%{_lib}
-ln -s libpcre.so.0.0.1 $RPM_BUILD_ROOT/%{_lib}/libpcre.so.0
 # << install post
 %check
 # >> check
@@ -103,14 +94,10 @@ make check
 %files
 %defattr(-,root,root,-)
 # >> files
-/%{_lib}/libpcre.so.1*
 %{_libdir}/*.so.*
 %{_bindir}/pcregrep
 %{_bindir}/pcretest
-%{_mandir}/*/*.gz
-# HACK: temporary fix for SONAME change before we have rebuild everything
-/%{_lib}/libpcre.so.0
-/%{_lib}/libpcre.so.0.0.1
+%doc %{_mandir}/*/*.gz
 # << files
 
 
