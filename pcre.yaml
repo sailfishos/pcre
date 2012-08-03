@@ -1,6 +1,6 @@
 Name: pcre
 Summary: Perl-compatible regular expression library
-Version: 8.30
+Version: 8.31
 Release: 1
 Group: System/Libraries
 License: BSD
@@ -33,3 +33,8 @@ SubPackages:
       Summary: Development files for %{name}
       Group: Development/Libraries
       Description: Development files (Headers, libraries for dynamic linking, etc) for %{name}.
+
+    - Name: static
+      Summary: Static libraries files for %{name}
+      Group: Development/Libraries
+      Description: Static development files for %{name}.
