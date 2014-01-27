@@ -51,7 +51,6 @@ Static development files for %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}
-
 # >> setup
 # << setup
 
@@ -67,7 +66,9 @@ done
 # << build pre
 
 %configure  \
+%ifnarch aarch64
     --enable-jit \
+%endif
     --enable-utf \
     --enable-unicode-properties \
     --enable-pcre8 \
