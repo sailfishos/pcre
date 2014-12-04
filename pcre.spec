@@ -11,7 +11,7 @@ Name:       pcre
 
 Summary:    Perl-compatible regular expression library
 Version:    8.31
-Release:    2
+Release:    3
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
@@ -20,6 +20,8 @@ Source100:  pcre.yaml
 # Fix unused memory usage on zero-repeat assertion condition.
 # CVE-2014-8964, in upstream after 8.36
 Patch0: pcre-8.33-Fix-zero-repeat-assertion-condition-bug.patch
+#Fix compilation/tests with gcc4.9
+Patch1: pcre-8.35-Fix-silly-quantifier-size-check.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -56,6 +58,7 @@ Static development files for %{name}.
 %setup -q -n %{name}-%{version}
 # >> setup
 %patch0 -p1 -b .zero_repeat_assertion
+%patch1 -p1 -b .fix_silly_quantifier_size_check
 # << setup
 
 %build

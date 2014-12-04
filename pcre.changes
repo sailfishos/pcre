@@ -1,3 +1,6 @@
+* Thu Dec 04 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 8.31-3
+- Fix compilation/tests with gcc4.9.
+
 * Thu Dec 04 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 8.31-2
 - Fix CVE-2014-8964.
 
