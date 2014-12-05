@@ -1,3 +1,9 @@
+* Thu Dec 04 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 8.31-3
+- Fix compilation/tests with gcc4.9.
+
+* Thu Dec 04 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 8.31-2
+- Fix CVE-2014-8964.
+
 * Fri Aug 03 2012 Marko Saukko <marko.saukko@jollamobile.com> - 8.31
 - Update to version 8.31
 - Add static package.
