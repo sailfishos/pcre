@@ -51,7 +51,7 @@ Static development files for %{name}.
 %patch1 -p1 -b .fix_silly_quantifier_size_check
 
 %build
-libtoolize --copy --force && autoreconf
+libtoolize --copy --force && autoreconf -vfi
 # One contributor's name is non-UTF-8
 for F in ChangeLog; do
 iconv -f latin1 -t utf8 "$F" >"${F}.utf8"
