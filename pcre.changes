@@ -1,3 +1,6 @@
+* Wed Jun 15 2016 Pekka Vuorela <pekka.vuorela@jollamobile.com> - 8.31-4
+- Install missing automake files. Contributes to JB#35132
+
 * Thu Dec 04 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 8.31-3
 - Fix compilation/tests with gcc4.9.
 
