@@ -27,7 +27,6 @@ just provides a POSIX calling interface to PCRE: the regular expressions
 themselves still follow Perl syntax and semantics. The header file
 for the POSIX-style functions is called pcreposix.h.
 
-
 %package devel
 Summary:    Development files for %{name}
 Group:      Development/Libraries
@@ -43,6 +42,14 @@ Requires:   %{name} = %{version}-%{release}
 
 %description static
 Static development files for %{name}.
+
+%package doc
+Summary:    Documentation for %{name}
+Group:      Documentation
+Requires:   %{name} = %{version}-%{release}
+
+%description doc
+Man pages and documentation for %{name}.
 
 
 %prep
@@ -68,7 +75,7 @@ done
     --enable-pcre8 \
     --enable-pcre16
 
-make %{?jobs:-j%jobs}
+make %{_smp_mflags}
 
 %install
 rm -rf %{buildroot}
@@ -86,7 +93,6 @@ make check
 %{_libdir}/*.so.*
 %{_bindir}/pcregrep
 %{_bindir}/pcretest
-%doc %{_mandir}/*/*.gz
 
 %files devel
 %defattr(-,root,root,-)
@@ -94,9 +100,12 @@ make check
 %{_libdir}/pkgconfig/*
 %{_includedir}/*.h
 %{_bindir}/pcre-config
-%doc %{_docdir}/pcre
 
 %files static
 %defattr(-,root,root,-)
 %{_libdir}/*.a
 
+%files doc
+%defattr(-,root,root,-)
+%{_mandir}/*/*.gz
+%doc %{_docdir}/pcre
