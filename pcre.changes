@@ -1,3 +1,6 @@
+* Thu Dec 20 2018 Tomi Leppänen <tomi.leppanen@jolla.com> - 8.31-5
+- Add doc subpackage. Contributes to JB#24119
+
 * Wed Jun 15 2016 Pekka Vuorela <pekka.vuorela@jollamobile.com> - 8.31-4
 - Install missing automake files. Contributes to JB#35132
 

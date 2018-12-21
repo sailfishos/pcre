@@ -3,7 +3,7 @@ Name:       pcre
 
 Summary:    Perl-compatible regular expression library
 Version:    8.31
-Release:    3
+Release:    5
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
