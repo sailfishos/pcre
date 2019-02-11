@@ -2,17 +2,12 @@ Name:       pcre
 %define keepstatic 1
 
 Summary:    Perl-compatible regular expression library
-Version:    8.31
-Release:    5
+Version:    8.42
+Release:    1
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
 Source0:    ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%{name}-%{version}.tar.bz2
-# Fix unused memory usage on zero-repeat assertion condition.
-# CVE-2014-8964, in upstream after 8.36
-Patch0: pcre-8.33-Fix-zero-repeat-assertion-condition-bug.patch
-#Fix compilation/tests with gcc4.9
-Patch1: pcre-8.35-Fix-silly-quantifier-size-check.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -54,8 +49,6 @@ Man pages and documentation for %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1 -b .zero_repeat_assertion
-%patch1 -p1 -b .fix_silly_quantifier_size_check
 
 %build
 libtoolize --copy --force && autoreconf -vfi
@@ -80,6 +73,8 @@ make %{_smp_mflags}
 %install
 rm -rf %{buildroot}
 %make_install
+
+mv %{buildroot}%{_docdir}/pcre{,-%{version}}
 
 %check
 make check
@@ -108,4 +103,4 @@ make check
 %files doc
 %defattr(-,root,root,-)
 %{_mandir}/*/*.gz
-%doc %{_docdir}/pcre
+%doc %{_docdir}/%{name}-%{version}
