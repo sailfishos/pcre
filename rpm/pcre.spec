@@ -7,7 +7,7 @@ Release:    1
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
-Source0:    %{name}-%{version}.tar.gz
+Source0:    %{name}-8.42.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -48,7 +48,7 @@ Man pages and documentation for %{name}.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-8.42
 
 %build
 libtoolize --copy --force && autoreconf -vfi
