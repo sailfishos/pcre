@@ -1,3 +1,6 @@
+* Mon Feb 11 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 8.42-1
+- [upstream] Update to pcre 8.42. Fixes JB#44391
+
 * Thu Dec 20 2018 Tomi Leppänen <tomi.leppanen@jolla.com> - 8.31-5
 - Add doc subpackage. Contributes to JB#24119
 
