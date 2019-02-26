@@ -7,7 +7,7 @@ Release:    1
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
-Source0:    ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%{name}-%{version}.tar.bz2
+Source0:    %{name}-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
