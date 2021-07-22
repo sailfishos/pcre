@@ -64,10 +64,9 @@ done
     --enable-pcre8 \
     --enable-pcre16
 
-make %{_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 mv %{buildroot}%{_docdir}/pcre{,-%{version}}
