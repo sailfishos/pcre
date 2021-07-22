@@ -12,6 +12,7 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
+BuildRequires:  libstdc++-devel
 
 %description
 Perl-compatible regular expression library.
