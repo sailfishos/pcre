@@ -4,7 +4,6 @@ Name:       pcre
 Summary:    Perl-compatible regular expression library
 Version:    8.42+git1
 Release:    1
-Group:      System/Libraries
 License:    BSD
 URL:        http://www.pcre.org/
 Source0:    %{name}-8.42.tar.gz
@@ -13,6 +12,7 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
+BuildRequires:  libstdc++-devel
 
 %description
 Perl-compatible regular expression library.
@@ -24,7 +24,6 @@ for the POSIX-style functions is called pcreposix.h.
 
 %package devel
 Summary:    Development files for %{name}
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -32,7 +31,6 @@ Development files (Headers, libraries for dynamic linking, etc) for %{name}.
 
 %package static
 Summary:    Static libraries files for %{name}
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description static
@@ -40,7 +38,6 @@ Static development files for %{name}.
 
 %package doc
 Summary:    Documentation for %{name}
-Group:      Documentation
 Requires:   %{name} = %{version}-%{release}
 
 %description doc
@@ -68,10 +65,9 @@ done
     --enable-pcre8 \
     --enable-pcre16
 
-make %{_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 mv %{buildroot}%{_docdir}/pcre{,-%{version}}
