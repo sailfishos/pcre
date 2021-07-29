@@ -2,7 +2,7 @@ Name:       pcre
 %define keepstatic 1
 
 Summary:    Perl-compatible regular expression library
-Version:    8.42+git1
+Version:    8.42+git2
 Release:    1
 License:    BSD
 URL:        http://www.pcre.org/
