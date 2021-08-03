@@ -1,4 +1,4 @@
-* Tue Jul 22 2019 Björn Bidar <bjorn.bidar@jolla.com> - 8.42+git2
+* Tue Jul 22 2021 Björn Bidar <bjorn.bidar@jolla.com> - 8.42+git2
 - Add missing libstd++-devel for unit tests. JB#54767
 
 * Mon Feb 11 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 8.42+git1
