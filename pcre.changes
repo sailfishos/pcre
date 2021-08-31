@@ -1,3 +1,6 @@
+* Tue Aug 31 2021 Pekka Vuorela <pekka.vuorela@jolla.com> - 8.45+git1
+- Update to 8.45. Fixes JB#55130
+
 * Thu Jul 22 2021 Björn Bidar <bjorn.bidar@jolla.com> - 8.42+git2
 - Add missing libstd++-devel for unit tests. JB#54767
 

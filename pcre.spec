@@ -2,11 +2,11 @@ Name:       pcre
 %define keepstatic 1
 
 Summary:    Perl-compatible regular expression library
-Version:    8.42+git2
+Version:    8.45+git1
 Release:    1
 License:    BSD
 URL:        http://www.pcre.org/
-Source0:    %{name}-8.42.tar.gz
+Source0:    %{name}-8.45.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -45,7 +45,7 @@ Man pages and documentation for %{name}.
 
 
 %prep
-%setup -q -n %{name}-8.42
+%setup -q -n %{name}-8.45
 
 %build
 libtoolize --copy --force && autoreconf -vfi
