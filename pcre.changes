@@ -1,3 +1,6 @@
+* Mon Nov 15 2021 Pekka Vuorela <pekka.vuorela@jolla.com> - 8.45+git2
+- Mark license files as %license. JB#55991
+
 * Tue Aug 31 2021 Pekka Vuorela <pekka.vuorela@jolla.com> - 8.45+git1
 - Update to 8.45. Fixes JB#55130
 

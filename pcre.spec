@@ -2,7 +2,7 @@ Name:       pcre
 %define keepstatic 1
 
 Summary:    Perl-compatible regular expression library
-Version:    8.45+git1
+Version:    8.45+git2
 Release:    1
 License:    BSD
 URL:        http://www.pcre.org/
@@ -81,6 +81,7 @@ make check
 
 %files
 %defattr(-,root,root,-)
+%license LICENCE
 %{_libdir}/*.so.*
 %{_bindir}/pcregrep
 %{_bindir}/pcretest
