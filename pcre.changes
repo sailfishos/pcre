@@ -1,3 +1,6 @@
+* Thu Oct 09 2025 Matti Viljanen <matti.viljanen@jolla.com> - 8.45+git3
+- Fix failing RunTest. JB#62519
+
 * Mon Nov 15 2021 Pekka Vuorela <pekka.vuorela@jolla.com> - 8.45+git2
 - Mark license files as %license. JB#55991
 
@@ -34,7 +37,7 @@
 - Update to version 8.30
 - Dropped merged patch: pcre-8.10-multilib.patch
 - Added .yaml for spectacle
-- Added compat package for the old libpcre.so.0 to maintain 
+- Added compat package for the old libpcre.so.0 to maintain
   compatibility for now.
 
 * Tue May 24 2011 Anas Nashif <anas.nashif@intel.com> - 8.11

@@ -2,11 +2,15 @@ Name:       pcre
 %define keepstatic 1
 
 Summary:    Perl-compatible regular expression library
-Version:    8.45+git2
+Version:    8.45+git3
 Release:    1
 License:    BSD
 URL:        http://www.pcre.org/
 Source0:    %{name}-8.45.tar.gz
+
+Patch1:     pcre-8.41-stack_frame_size_detection.patch
+Patch2:     pcre-8.45-bsc1199232-unicode-property-matching.patch
+
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -45,7 +49,7 @@ Man pages and documentation for %{name}.
 
 
 %prep
-%setup -q -n %{name}-8.45
+%autosetup -p1 -n %{name}-8.45
 
 %build
 libtoolize --copy --force && autoreconf -vfi
@@ -73,31 +77,33 @@ done
 mv %{buildroot}%{_docdir}/pcre{,-%{version}}
 
 %check
-make check
+# Some setlocale calls fail with C.UTF-8
+export LC_ALL=C
+# RunTest test 2 needs lots of stack, if it ever segfaults
+# try increasing this
+ulimit -s $((16*1024))
+%make_build check
+export LC_ALL=
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %license LICENCE
 %{_libdir}/*.so.*
 %{_bindir}/pcregrep
 %{_bindir}/pcretest
 
 %files devel
-%defattr(-,root,root,-)
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*.h
 %{_bindir}/pcre-config
 
 %files static
-%defattr(-,root,root,-)
 %{_libdir}/*.a
 
 %files doc
-%defattr(-,root,root,-)
 %{_mandir}/*/*.gz
 %doc %{_docdir}/%{name}-%{version}
